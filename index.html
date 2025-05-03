@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="text-center py-5">
+    <h1 class="display-4 mb-4">Welcome to Food Delivery System</h1>
+    <p class="lead mb-4">Order your favorite food from the best restaurants in town!</p>
+    
+    {% if not session.user_id %}
+    <div class="d-grid gap-2 col-md-6 mx-auto">
+        <a href="{{ url_for('signup') }}" class="btn btn-primary btn-lg">Sign Up Now</a>
+        <a href="{{ url_for('login') }}" class="btn btn-outline-primary btn-lg">Login</a>
+    </div>
+    {% else %}
+    <div class="d-grid gap-2 col-md-6 mx-auto">
+        <a href="{{ url_for('restaurants') }}" class="btn btn-primary btn-lg">Browse Restaurants</a>
+        <a href="{{ url_for('orders') }}" class="btn btn-outline-primary btn-lg">View Your Orders</a>
+    </div>
+    {% endif %}
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="bi bi-shop fs-1 text-primary mb-3"></i>
+                <h5 class="card-title">Wide Selection</h5>
+                <p class="card-text">Choose from a variety of restaurants and cuisines.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="bi bi-truck fs-1 text-primary mb-3"></i>
+                <h5 class="card-title">Fast Delivery</h5>
+                <p class="card-text">Get your food delivered quickly to your doorstep.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="bi bi-star fs-1 text-primary mb-3"></i>
+                <h5 class="card-title">Best Quality</h5>
+                <p class="card-text">Experience the best food quality and service.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

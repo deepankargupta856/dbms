@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ restaurant.name }} - Menu{% endblock %}
+
+{% block content %}
+<div class="mb-4">
+    <h2>{{ restaurant.name }}</h2>
+    <p class="text-muted">
+        <i class="bi bi-geo-alt-fill"></i>
+        {{ restaurant.location }}
+    </p>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for item in menu_items %}
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.name }}</h5>
+                <p class="card-text">{{ item.description }}</p>
+                <p class="card-text">
+                    <strong class="text-primary">${{ "%.2f"|format(item.price) }}</strong>
+                </p>
+                <form action="{{ url_for('add_to_cart') }}" method="POST">
+                    <input type="hidden" name="item_id" value="{{ item.id }}">
+                    <div class="input-group mb-3">
+                        <input type="number" class="form-control" name="quantity" 
+                               value="1" min="1" max="10">
+                        <button class="btn btn-primary" type="submit">
+                            <i class="bi bi-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="col-12">
+        <div class="alert alert-info">
+            No menu items available at the moment.
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="mt-4">
+    <a href="{{ url_for('restaurants') }}" class="btn btn-outline-primary">
+        <i class="bi bi-arrow-left"></i> Back to Restaurants
+    </a>
+</div>
+{% endblock %} 

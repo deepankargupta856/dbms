@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}Restaurants{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Available Restaurants</h2>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for restaurant in restaurants %}
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">{{ restaurant.name }}</h5>
+                <p class="card-text">
+                    <i class="bi bi-geo-alt-fill text-primary"></i>
+                    {{ restaurant.location }}
+                </p>
+                <a href="{{ url_for('menu', restaurant_id=restaurant.id) }}" 
+                   class="btn btn-primary">View Menu</a>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="col-12">
+        <div class="alert alert-info">
+            No restaurants available at the moment.
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %} 
