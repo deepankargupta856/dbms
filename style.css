@@ -1,0 +1,293 @@
+/* Modern Food Delivery Styling */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary: #FF1493; /* Hot Pink */
+    --secondary: #00FF00; /* Bright Green */
+    --dark: #000000;
+    --light: #FFFFFF;
+    --success: #00FF00;
+    --warning: #FFFF00;
+    --danger: #FF0000;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(45deg, #FF1493, #00FF00) !important;
+    color: white !important;
+    line-height: 1.6;
+}
+
+/* Navbar Styling */
+.navbar {
+    background: #000000 !important;
+    box-shadow: 0 4px 15px rgba(255, 20, 147, 0.5);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00FF00 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #00FF00 !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #FF1493 !important;
+    color: white !important;
+    transform: translateY(-2px);
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    border-radius: 15px;
+    background: #000000 !important;
+    box-shadow: 0 10px 20px rgba(255, 20, 147, 0.5);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    margin-bottom: 25px;
+    color: white !important;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 255, 0, 0.5);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #00FF00 !important;
+    margin-bottom: 1rem;
+}
+
+/* Restaurant Cards */
+.restaurant-card {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #FF1493 !important;
+}
+
+.restaurant-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #FF1493, #00FF00);
+    opacity: 0.2;
+    transition: all 0.3s ease;
+}
+
+.restaurant-card:hover::before {
+    opacity: 0.4;
+}
+
+/* Menu Items */
+.menu-item-card {
+    border-left: 4px solid #00FF00 !important;
+    background: #000000 !important;
+}
+
+.menu-item-card .card-text {
+    color: #FFFFFF !important;
+    font-size: 0.95rem;
+}
+
+/* Price Tags */
+.text-primary {
+    color: #FF1493 !important;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 20, 147, 0.5);
+}
+
+.btn-primary {
+    background: #FF1493 !important;
+    border: none;
+    color: white !important;
+}
+
+.btn-primary:hover {
+    background: #00FF00 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 255, 0, 0.5);
+}
+
+.btn-outline-primary {
+    color: #00FF00 !important;
+    border: 2px solid #00FF00 !important;
+    background: transparent !important;
+}
+
+.btn-outline-primary:hover {
+    background: #00FF00 !important;
+    color: black !important;
+    transform: translateY(-3px);
+}
+
+/* Form Controls */
+.form-control {
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    border: 2px solid #FF1493 !important;
+    background: #000000 !important;
+    color: white !important;
+}
+
+.form-control:focus {
+    border-color: #00FF00 !important;
+    box-shadow: 0 0 0 0.2rem rgba(0, 255, 0, 0.25);
+}
+
+/* Tables */
+.table {
+    background: #000000 !important;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(255, 20, 147, 0.5);
+    color: white !important;
+}
+
+.table thead th {
+    background: #FF1493 !important;
+    color: white !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    padding: 1rem;
+}
+
+.table td {
+    padding: 1rem;
+    vertical-align: middle;
+    border-color: #00FF00 !important;
+}
+
+/* Cart Styling */
+.cart-item {
+    background: #000000 !important;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 5px 15px rgba(255, 20, 147, 0.5);
+    border-left: 4px solid #00FF00 !important;
+    color: white !important;
+}
+
+/* Alerts */
+.alert {
+    border-radius: 12px;
+    border: none;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 5px 15px rgba(255, 20, 147, 0.5);
+}
+
+.alert-success {
+    background: #00FF00 !important;
+    color: black !important;
+}
+
+.alert-danger {
+    background: #FF0000 !important;
+    color: white !important;
+}
+
+/* Footer */
+.footer {
+    background: #000000 !important;
+    box-shadow: 0 -4px 15px rgba(255, 20, 147, 0.5);
+    padding: 2rem 0;
+    margin-top: 4rem;
+    color: #00FF00 !important;
+}
+
+/* Restaurant Location Icon */
+.bi-geo-alt-fill {
+    color: #00FF00 !important;
+    font-size: 1.2rem;
+}
+
+/* Cart Quantity Input */
+input[type="number"] {
+    width: 80px !important;
+    text-align: center;
+    border-radius: 8px;
+    border: 2px solid #FF1493 !important;
+    padding: 0.5rem;
+    font-weight: 500;
+    background: #000000 !important;
+    color: white !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 20px;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .card-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* Loading States */
+.btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FF1493;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00FF00;
+} 
